@@ -18,15 +18,19 @@ Currently, the server can only run on **Windows**, but you can still use the cli
 1. Download the [server](https://github.com/kelio-mv/time-control/releases/download/v1.0/server.exe) executable.
 2. Move it to **C:\Windows\System32**.
 3. Create a basic task in **Task Scheduler** to start the program when the user logs in.
-4. Open the task properties and check "Run with highest privileges". Move to the tab "Conditions" and uncheck "Start the task only if the computer is on AC power. Move to the tab "Settings" and uncheck "Stop the task if it runs longer than 3 days". Finally click "OK".
-5. Log out and then log in to start the service.
+4. Open the task properties and check "Run with highest privileges".
+5. Move to the tab "Conditions" and uncheck "Start the task only if the computer is on AC power".
+6. Move to the tab "Settings" and uncheck "Stop the task if it runs longer than 3 days".
+7. Finally, click on the button "OK" to save the changes.
+8. Log out and then log in to start the service.
 
 # Usage
 
 To configure your child's computer usage time, your computer must be connected to the same network of your child's computer. This is only necessary in the first setup or when you need to make changes.
 
-1. In your computer, open the file **start.exe** from the extracted folder. If you aren't on **Windows**, start an **HTTP server** and open the URL in your browser.
-2. Type the **IP Address** of your child's computer on your **local network** and connect.
+1. In your computer, open the file **Time_Control.exe** from the extracted folder.
+2. If you aren't on **Windows**, start an **HTTP server** and open the URL in your browser.
+3. In the app, type the **IP Address** of your child's computer on your **local network** and connect.
 
 Now, let's clarify some aspects that might not be clear.
 
