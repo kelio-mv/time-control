@@ -1,0 +1,22 @@
+.time-input {
+  font-size: 1.125rem;
+  font-weight: 500;
+
+  &__input {
+    width: 2.75rem;
+    height: 2.5rem;
+    background: var(--clr-100);
+    border: 1px solid var(--clr-400);
+    outline: none;
+    text-align: center;
+
+    &::placeholder {
+      color: var(--clr-500);
+    }
+  }
+
+  &__separator {
+    margin: 0 3px;
+    color: var(--clr-500);
+  }
+}
