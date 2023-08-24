@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "create-nodew-exe": "^1.0.10",
+    "pkg": "^5.8.1",
     "socket.io": "^4.6.2"
   }
 }
