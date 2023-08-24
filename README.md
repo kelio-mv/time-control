@@ -1,19 +1,19 @@
 # About
 
 Time Control is a software designed for parents who want to manage their children's computer usage time.
-It is composed of a client that runs on your computer and a server that runs on your child's computer.
+It consists of a client that runs on your computer and a server that runs on your child's computer.
 
 # Prerequisites
 
-Currently, the server can only run on **Windows** but you can still use the client on other platforms.
+Currently, the server can only run on **Windows**, but you can still use the client on other platforms.
 
 # Installation
 
-### In your computer
+### On your computer
 
 - Download and extract the [client](https://github.com/kelio-mv/time-control/releases/download/v1.0/client.zip) web application.
 
-### In your child's computer
+### On your child's computer
 
 1. Download the [server](https://github.com/kelio-mv/time-control/releases/download/v1.0/server.exe) executable.
 2. Move it to **C:\Windows\System32**.
@@ -23,12 +23,12 @@ Currently, the server can only run on **Windows** but you can still use the clie
 
 # Usage
 
-In order to configure your child's computer usage time, your computer must be connected to the same network of your child's computer. This is only necessary in the first setup or when you need to make changes.
+To configure your child's computer usage time, your computer must be connected to the same network of your child's computer. This is only necessary in the first setup or when you need to make changes.
 
 1. In your computer, open the file **start.exe** from the extracted folder. If you aren't on **Windows**, start an **HTTP server** and open the URL in your browser.
 2. Type the **IP Address** of your child's computer on your **local network** and connect.
 
-Now, let me clarify some things that might not be clear.
+Now, let's clarify some aspects that might not be clear.
 
 ### Downtime and Daily limit
 
@@ -45,32 +45,36 @@ You must use the 24-hour format for both, as in the following examples:
 
 ### Automatic system time sync
 
-This will avoid unwanted behavior when your child's computer time is wrong and will prevent them to change the time in order to keep using the computer.
+This will avoid unwanted behavior when your child's computer time is incorrect and will prevent them to change the time to continue using the computer.
 
 # Build
 
-If you want to build this software from your own computer, download this repository as zip, extract it, and follow these steps:
+Before starting the build process, ensure that you have the following requirements installed on your computer:
+
+- [Node.js](https://nodejs.org/)
+- [Python 3](https://www.python.org/)
+- [PyInstaller](https://pypi.org/project/pyinstaller/)
+
+Now, download this repository as a zip file, extract it, and follow these steps:
 
 ## Client
 
-1. In the extracted folder, open the terminal and run the commands
-
+1. In the project folder, open the terminal and run the commands:
 ```console
 npm install
 npm run build
 cd client
 pyinstaller start_http-server.py --onefile --name=Time_Control --icon=../public/app-logo.ico
 ```
-
-2. Create a new folder wherever you want (e.g. in your desktop)
-3. Move the executable from the folder **client/dist** and the content of the folder **dist** to the folder you created
+2. Create a new folder in a location of your choice (e.g., your desktop).
+3. Move the generated executable from the **client/dist** folder and the contents of the **dist** folder to the newly created folder.
 
 ## Server
 
-- In the extracted folder, open the terminal and run the commands
-
+- In the project folder, open the terminal and run the commands:
 ```console
 cd server
 npm install
 npm run build
 ```
+- Move the file **server.exe** to a location of your choice.
