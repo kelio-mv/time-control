@@ -28,7 +28,7 @@ Currently, the server can only run on **Windows**, but you can still use the cli
 
 To configure your child's computer usage time, your computer must be connected to the same network of your child's computer. This is only necessary in the first setup or when you need to make changes.
 
-1. In your computer, open the file **Time_Control.exe** from the extracted folder.
+1. On your computer, open the file **Time_Control.exe** from the extracted folder.
 2. If you aren't on **Windows**, start an **HTTP server** and open the URL in your browser.
 3. In the app, type the **IP Address** of your child's computer on your **local network** and connect.
 
