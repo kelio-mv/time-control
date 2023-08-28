@@ -75,10 +75,10 @@ pyinstaller start_http-server.py --onefile --name=Time_Control --icon=../public/
 
 ## Server
 
-- In the project folder, open the terminal and run the commands:
+1. In the project folder, open the terminal and run the commands:
 ```console
 cd server
 npm install
 npm run build
 ```
-- Move the file **server.exe** to a location of your choice.
+2. Move the file **server.exe** to a location of your choice.
