@@ -28,11 +28,11 @@ class Panel extends React.Component {
   savedSettings = JSON.stringify(this.state.settings);
 
   componentDidMount() {
+    socket.on("set_state", (state) => this.setState({ state }));
     socket.emit("get", (data) => {
       this.savedSettings = JSON.stringify(data.settings);
       this.setState(data);
     });
-    socket.on("set-state", (state) => this.setState({ state }));
   }
 
   componentDidUpdate(_, prevState) {
@@ -122,7 +122,7 @@ class Panel extends React.Component {
                 <button
                   className="panel__status-btn"
                   onClick={() => {
-                    socket.emit("set_bonusTime", "00:00");
+                    socket.emit("set_bonus_time", "00:00");
                   }}
                 >
                   {this.parseMilliseconds(state.bonusTime)} &#x2715;
@@ -314,7 +314,7 @@ class Panel extends React.Component {
             <button
               className="btn"
               onClick={() => {
-                socket.emit("set_bonusTime", bonusTime);
+                socket.emit("set_bonus_time", bonusTime);
                 this.closeModal();
               }}
               disabled={!isBonusTimeValid}
