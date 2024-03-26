@@ -2,10 +2,10 @@
   "name": "time-control",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "pkg server.js --target node18-win && node hide-console.js"
+    "build": "pkg main.js --target node18-win && node hide-console.js"
   },
   "keywords": [],
   "author": "",

@@ -1,18 +1,22 @@
-const { execSync } = require("child_process");
 const fs = require("fs");
+const { execSync: _execSync } = require("child_process");
 
 async function getCurrentTime() {
   const response = await fetch("http://time.windows.com");
   return new Date(response.headers.get("date"));
 }
 
-async function setSystemTime(date) {
+function execSync(command) {
+  _execSync(command, { windowsHide: true });
+}
+
+function setSystemTime(date) {
   const format = (value) => `0${value}`.slice(-2);
   const dateArray = [date.getDate(), date.getMonth() + 1, date.getFullYear()];
   const timeArray = [date.getHours(), date.getMinutes()];
   const dateString = dateArray.map((v, i) => (i === 2 ? v : format(v))).join("-");
   const timeString = timeArray.map(format).join(":");
-  execSync(`date ${dateString} && time ${timeString}`, { windowsHide: true });
+  execSync(`date ${dateString} && time ${timeString}`);
 }
 
 function parseTime(now, time) {
@@ -25,11 +29,7 @@ function parseTime(now, time) {
 
 function isTimeWithinInterval(now, interval) {
   const [start, end] = interval.map((time) => parseTime(now, time));
-  if (start < end) {
-    return start <= now && now <= end;
-  } else {
-    return start <= now || now <= end;
-  }
+  return start < end ? start <= now && now <= end : start <= now || now <= end;
 }
 
 function getRemainingTime(now, intervalEnd) {
@@ -38,7 +38,7 @@ function getRemainingTime(now, intervalEnd) {
 }
 
 function scheduleShutdown(timeout) {
-  execSync(`shutdown /s /t ${timeout}`, { windowsHide: true });
+  execSync(`shutdown /s /t ${timeout}`);
 }
 
 function connectToWirelessNetwork() {
